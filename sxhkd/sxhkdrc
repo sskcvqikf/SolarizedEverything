@@ -1,0 +1,117 @@
+# Reload functions
+
+# run urxvt
+super + Return
+	urxvt
+
+# run dmenu
+ctrl + super + m
+	~/scripts/mdmenu
+
+# rerun sxhkd
+super + alt
+	pkill -USR1 -x sxhkd
+
+# rerun / quit bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# run firefox
+ctrl + super + f
+	/usr/lib/firefox/firefox
+
+# run telegram-desktop
+ctrl + super + t
+	kotatogram-desktop -- %u
+
+# run discord
+ctrl + super + d
+	/usr/bin/discord
+
+# run code
+ctrl + super + o
+	/usr/bin/code
+
+# run sublime text
+ctrl + super + s
+	/opt/sublime_text/sublime_text
+
+# elementary files
+ctrl + super + e
+	pcmanfm
+
+# increase volume by 5
+XF86AudioLowerVolume
+	amixer -D pulse -R sset Master 5%-
+
+# decrease volume by 5 
+XF86AudioRaiseVolume
+	amixer -D pulse -R sset Master 5%+
+
+# mute/unmute
+XF86AudioMute
+	amixer -D pulse -R sset Master {mute, unmute}
+
+# capture a region
+ctrl + Print
+	flameshot gui
+
+# capture an entire screen
+Print
+	flameshot full -c
+
+# capture an app
+# ctrl +shift + Print
+#     spectacle -bac
+
+# run lemonbar
+ctrl + shift + l
+	~/scripts/lemonlaunch
+
+# run dolphin
+ctrl + super + n
+	dolphin
+
+# switch desktops
+ctrl + {F1,F2,Escape,F3,F6,space}
+	bspc desktop -f {1,2,3,4,5,6}
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+	
+# move window to dekstop
+super + {F1,F2,Escape,F3,F6,space}
+    id=$(bspc query -N -n); bspc node -d ^{1,2,3,4,5,6}
+
+# set window to another mode
+super + {t, s, f}
+	bspc node -t \~{tiled,floating,fullscreen}
+
+# kill / close node
+super + {_,shift + }w
+    bspc node -{k,c}
+
+# atltabbing
+alt + {_,shift + }Tab
+	bspc node -f {next,prev}.LOCAL
+
+# increase size of window
+super + {Left,Down,Up,Right}
+    ~/scripts/bspwm_resize expand {west,south,north,east} 20
+
+# decrease size of window
+super + shift + {Left,Down,Up,Right}
+    ~/scripts/bspwm_resize contract {west,south,north,east} 20
+
+# make unixporn look
+ctrl + super + shift + l
+	bspc config top_padding 450; bspc config right_padding 763; bspc config bottom_padding 450 & bspc config left_padding 763
+
+# make regular gaps
+ctrl + super + shift + r
+	bspc config top_padding 30; bspc config right_padding 30; bspc config bottom_padding 28 & bspc config left_padding 30
+
+# genlty close window
+alt + F4
+	xdo close

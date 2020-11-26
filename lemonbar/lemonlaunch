@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+killall lemonbar
+killall lemonconf
+~/scripts/lemonconf | lemonbar -p -g 1920x18+0+0 -F "#FF839496" -B "#FF002b36" -U "#FF839496" \
+-u 2 -o -1 -f "Source Code Pro"-10

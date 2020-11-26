@@ -1,0 +1,71 @@
+html:not([style-scope]):not(.style-scope):not([color-exp]) *, html[color-exp]:not([style-scope]):not(.style-scope) {
+    --solarized-base03: #002b36;
+    --solarized-base02: #073642;
+    --solarized-base01: #586e75;
+    --solarized-base00: #657b83;
+    --solarized-base0: #839496;
+    --solarized-base1: #93a1a1;
+    --solarized-base2: #eee8d5;
+    --solarized-base3: #fdf6e3;
+    --solarized-yellow: #b58900;
+    --solarized-orange: #cb4b16;
+    --solarized-red: #dc322f;
+    --solarized-magenta: #d33682;
+    --solarized-violet: #6c71c4;
+    --solarized-blue: #268bd2;
+    --solarized-cyan: #2aa198;
+    --solarized-green: #859900;
+    /* Backgrounds #073642*/
+    --yt-channel-header-background: #586e75;
+    --yt-playlist-background-header: #073642;
+    --yt-main-app-background: #073642 !important;
+    --yt-app-background: #002b36 !important;
+    --yt-main-app-background-tmp: #073642;
+    --yt-swatch-primary: #002b36;
+    --yt-guide-background: #002b36;
+    --yt-button-background-color: #073642;
+    --yt-dialog-background: #002b36;
+    --yt-spec-general-background-a: #073642;
+    --yt-spec-general-background-b: #073642;
+    --yt-spec-brand-background-primary: #073642;
+    --yt-spec-brand-background-solid: #073642;
+    /* Foregrounds */
+    --yt-searchbox-text-color: #073642 !important;
+    --ytd-comment-text-color: #93a1a1;
+    --yt-video-publish-date-color: #93a1a1;
+    --yt-collection-badge-color: #93a1a1;
+    --yt-placeholder-text-color: #93a1a1;
+    --yt-metadata-color: #eee8d5;
+    --yt-button-color: #eee8d5;
+    --yt-button-text-color: #eee8d5;
+    --yt-icon-color: #eee8d5;
+    --yt-searchbox-background: #eee8d5;
+    --yt-swatch-text: #eee8d5;
+    --yt-spec-text-primary: #fdf6e3;
+    --yt-primary-color: #fdf6e3;
+    --yt-primary-text-color: #fdf6e3;
+    --yt-secondary-text-color: #fdf6e3;
+    --ytd-badge-icon-color: #fdf6e3;
+    --yt-expand-color: #2aa198;
+    --yt-endpoint-color: #268bd2;
+    --yt-endpoint-hover-color: #268bd2;
+    --yt-searchbox-legacy-button-color: #268bd2;
+    --yt-searchbox-legacy-button-border-color: #268bd2;
+    --yt-swatch-logo-override: #268bd2;
+}
+.ytd-masthead#container {
+    background-color: #073642;
+}
+[background-color-update_], [background-color-update] {
+    background-color: #073642 !important;
+    /* set in JS by youtube */
+}
+#search-form #container {
+    border-radius: 0px;
+}
+#search-form {
+    margin: auto;
+}
+html, html[dark] {
+    background-color: #073642 !important;
+}

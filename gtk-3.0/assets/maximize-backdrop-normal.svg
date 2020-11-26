@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 50 50"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<title>Qt SVG Document</title>
+<desc>Generated with Qt</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+<image x="0" y="0" width="50" height="50" preserveAspectRatio="none" xlink:href="data:image/png;base64,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" />
+</g>
+
+<g fill="none" stroke="#004658" stroke-opacity="1" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" transform="matrix(1,0,0,1,0,1.5)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#004658" stroke-opacity="1" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" transform="matrix(2.38095,0,0,2.38095,0,1.5)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="7.5,11.5 10.5,8.5 13.5,11.5 " />
+</g>
+
+<g fill="none" stroke="#004658" stroke-opacity="1" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" transform="matrix(1,0,0,1,0,1.5)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#426066" stroke-opacity="1" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" transform="matrix(1,0,0,1,0,0)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#426066" stroke-opacity="1" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" transform="matrix(2.38095,0,0,2.38095,0,0)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="7.5,11.5 10.5,8.5 13.5,11.5 " />
+</g>
+
+<g fill="none" stroke="#426066" stroke-opacity="1" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" transform="matrix(1,0,0,1,0,0)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Noto Sans" font-size="10" font-weight="400" font-style="normal" 
+>
+</g>
+</g>
+</svg>

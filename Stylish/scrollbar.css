@@ -1,0 +1,8 @@
+body {
+  scrollbar-width: thin;          /* "auto" or "thin"  */
+  scrollbar-color: #839496 #002b36;   /* scroll thumb & track */
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #839496 #002b36;
+}

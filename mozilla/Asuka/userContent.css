@@ -1,0 +1,49 @@
+@-moz-document url(about:home), url(about:newtab) {
+    .click-target-container *, .top-sites-list * {
+        color: #fff !important ;
+        text-shadow: 2px 2px 2px #222 !important ;
+    }
+
+    .search-wrapper .logo-and-wordmark .logo{
+        background: url(img/asuka_fight.gif) no-repeat center !important;
+        background-size: contain !important;
+        width: 500px !important;
+        height: 250px !important;
+    }
+    .search-wrapper .logo-and-wordmark .wordmark {
+        display: none !important;
+    }
+    .search-wrapper input{
+        background: #073642 !important;
+        border: none !important;
+        border-bottom: solid 1px #657b83 !important;
+        box-shadow: none !important;
+    }
+    .search-wrapper .search-inner-wrapper:active input, .search-wrapper input:focus {
+        border-bottom: solid 1px #657b83 !important;
+    }
+
+    .ds-outer-wrapper-breakpoint-override .search-wrapper .search-inner-wrapper{
+        width: 500px !important;
+    }
+
+    .ds-outer-wrapper-breakpoint-override .search-wrapper .search-inner-wrapper{
+        position: relative !important;
+    }
+    .ds-outer-wrapper-breakpoint-override .search-wrapper .search-inner-wrapper::before{
+        position: absolute !important;
+        content: "" !important;
+        top: 13px !important;
+        left: 13px !important;
+        width: 20px !important;
+        height: 20px !important;
+        background: url(img/search.png);
+        background-size: contain !important;
+        z-index: 9999 !important;
+    }
+
+    #footer-asrouter-container{
+        display: none !important;
+    }
+
+} 
