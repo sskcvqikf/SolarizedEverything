@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PIC="lock.png"
+
+flameshot full -r > $PIC
+
+convert -scale 25% -scale 400% $PIC $PIC
+
+i3lock -i $PIC -u
+rm $PIC

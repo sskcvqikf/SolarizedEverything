@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+/bin/urxvt -e /usr/bin/fish

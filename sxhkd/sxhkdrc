@@ -4,12 +4,16 @@
 super + Return
 	urxvt
 
-# run dmenu
+# run dmenu / rofi
 ctrl + super + m
-	~/scripts/mdmenu
+	rofi -show power-menu
+	# ~/scripts/mdmenu
+
+ctrl + super + Delete
+	~/scripts/i3lockscreen
 
 # rerun sxhkd
-super + alt
+super + alt + Escape
 	pkill -USR1 -x sxhkd
 
 # rerun / quit bspwm
@@ -36,9 +40,13 @@ ctrl + super + o
 ctrl + super + s
 	/opt/sublime_text/sublime_text
 
-# elementary files
+# pcmanfm
 ctrl + super + e
 	pcmanfm
+
+# disable / enable dunst
+super + alt + d
+	notify-send {"DUNST_COMMAND_PAUSE", "DUNST_COMMAND_RESUME"}
 
 # increase volume by 5
 XF86AudioLowerVolume
@@ -68,13 +76,9 @@ Print
 ctrl + shift + l
 	~/scripts/lemonlaunch
 
-# run dolphin
-ctrl + super + n
-	dolphin
-
 # switch desktops
 ctrl + {F1,F2,Escape,F3,F6,space}
-	bspc desktop -f {1,2,3,4,5,6}
+	bspc desktop -f {1, 2, 3, 4, 5, 6}
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -82,11 +86,16 @@ super + {_,shift + }{h,j,k,l}
 	
 # move window to dekstop
 super + {F1,F2,Escape,F3,F6,space}
-    id=$(bspc query -N -n); bspc node -d ^{1,2,3,4,5,6}
+    id=$(bspc query -N -n); bspc node -d {1, 2, 3, 4, 5, 6}
+	# set id (bspc query -N -n); bspc node -d {1, 2, 3, 4, 5, 6}
+
+# Rotate Layout
+ctrl + super + r
+	bspc node @/ -R 90
 
 # set window to another mode
-super + {t, s, f}
-	bspc node -t \~{tiled,floating,fullscreen}
+super + {t, s, f, p}
+	bspc node -t \~{tiled,floating,fullscreen,pseudo_tiled}
 
 # kill / close node
 super + {_,shift + }w
@@ -106,7 +115,7 @@ super + shift + {Left,Down,Up,Right}
 
 # make unixporn look
 ctrl + super + shift + l
-	bspc config top_padding 450; bspc config right_padding 763; bspc config bottom_padding 450 & bspc config left_padding 763
+	bspc config top_padding 450; bspc config right_padding 759; bspc config bottom_padding 440 & bspc config left_padding 759
 
 # make regular gaps
 ctrl + super + shift + r

@@ -8,10 +8,11 @@ alsactl -f ~/.asoundconf restore &
 dunst &
 xrdb ~/.Xresources &
 sxhkd &
-feh --bg-center /home/sskcvqikf/Pictures/wallpapers/asuka_spears_solarized_bg.png &
+feh --bg-center  &
 setxkbmap -option grp:alt_shift_toggle us,ru,ua &
 flameshot &
 ~/scripts/lemonlaunch &
+xmodmap -e "keycode  65 = space space space space space space" &
 
 
 # MONITORS

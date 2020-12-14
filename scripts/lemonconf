@@ -1,0 +1,90 @@
+#!/usr/bin/bash
+
+background="#586e75"
+
+AddUnderline() {
+	echo "%{+u}$1%{-u}"
+}
+
+Workspaces() {
+	desktops=$(bspc query -D --names)
+    focused=$(bspc query -D --names -d focused)
+
+	for desktop in $desktops; do
+		desktop=$(echo "$desktop")
+		nodes=$(bspc query -N -d $desktop)
+
+		if [ ! -z "$nodes" ]; then
+			desktops=$(echo $desktops | sed "s/$desktop/$desktop/")
+    fi
+
+  done
+  desktops=$(echo $desktops | sed "s/$focused/%{B$background}%{+u}_$focused\_%{-u}%{B-}/")
+
+  echo $desktops | sed "s/_/ /g"
+}
+
+CpuTemp() {
+	temp=$(sensors | grep "Tdie" | sed "s/Tdie: *+//;s/°C *//")
+	if [ 1 -eq "$(echo "$temp > 80" | bc)" ]; then
+			printf "%%{F#ed0b0b}"
+	elif [ 1 -eq "$(echo "$temp > 60" | bc)" ]; then
+			printf "%%{F#f2e421}";
+	fi
+	Format ""$temp"°C%{F-}"
+}
+
+Cpu() {
+	usage=$(mpstat | sed '1,3d;s/.* //')
+	output="$(calc 100 - $usage)"
+	Format "$output"
+}
+
+Clock(){
+	DATE=$(date "+%d/%m/%y")
+	TIME=$(date "+%I:%M:%S")
+
+	AddUnderline "${DATE} ${TIME}"
+}
+
+ActiveWindow(){
+	printf " $(xdotool getwindowfocus getwindowname)"
+}
+
+
+Sound(){
+	device1=$(~/scripts/pulsedevices | grep "alsa_output.pci-0000_2b_00" -A 2)
+	device2=$(~/scripts/pulsedevices | grep "alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo" -A 2)
+	mute1=$(echo "$device1" | grep "Mute" | awk '{ print $2 }')
+	vol1=$(echo "$device1" | grep "front-left" | awk '{ print $5 }')
+	mute2=$(echo "$device2" | grep "Mute" | awk '{ print $2 }')
+	vol2=$(echo "$device2" | grep "front-left" | awk '{ print $5 }')
+	# output=""
+
+	# if [ "$mute" = "yes" ]; then
+	#   output="🔇 mute"
+	# elif [ "$(echo "$vol" | tr -d "%")" -gt 70 ]; then
+	#   output="🔊 $vol"
+	# elif [ "$(echo "$vol" | tr -d "%")" -gt 35 ]; then
+	#   output="奔 $vol"
+	# else
+	#   output="🔈 $vol"
+	# fi
+
+	echo "USB: $vol2  Analog: $vol1"
+}
+
+
+Layout() {
+	echo "$(xkb-switch)"
+}
+
+Update() {
+	echo -e "%{l} $(Workspaces)  $(ActiveWindow) %{r} $(Sound)  $(Layout)  $(Clock)  "
+	#echo -e "%{r} $(NewModule)"
+}
+
+while true; do
+	Update
+	sleep 0.1s
+done
